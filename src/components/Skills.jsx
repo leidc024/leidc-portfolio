@@ -4,15 +4,17 @@ import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase,FaJava } from "react-icon
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiNextjsFill,RiTailwindCssFill } from "react-icons/ri";
 import { CgFigma } from "react-icons/cg";
+import { SiExpo } from 'react-icons/si';
+import { TbBrandTypescript } from 'react-icons/tb';
 
 export default function Skills() {
   const [skills] = useState([
     { id: 1, name: "JavaScript", icon: <FaJs size={50} /> },
     { id: 2, name: "React", icon: <FaReact size={50} /> },
     { id: 3, name: "Node.js", icon: <FaNodeJs size={50} /> },
-    { id: 4, name: "Python", icon: <FaPython size={50} /> },
-    { id: 5, name: "MongoDB", icon: <FaDatabase size={50} /> },
-    { id: 6, name: "Java", icon: <FaJava size={50} /> },
+    { id: 4, name: "React Native", icon: <SiExpo size={50} /> },
+    { id: 5, name: "Supabase DB", icon: <FaDatabase size={50} /> },
+    { id: 6, name: "TypeScript", icon: <TbBrandTypescript size={50} /> },
     { id: 7, name: "Postgresql", icon: <BiLogoPostgresql size={50} /> },
     { id: 8, name: "Next.js", icon: <RiNextjsFill size={50} /> },
     { id: 9, name: "Tailwind", icon: <RiTailwindCssFill size={50} /> },
@@ -22,21 +24,21 @@ export default function Skills() {
   const [experiences] = useState([
     {
       id: 1,
-      company: "Google",
-      role: "Lead Software Engineer",
-      period: "Nov 2019 - Present",
+      company: "WyzLab Solutions",
+      role: "Web Developer Intern",
+      period: "June 2025 - Present",
       description:
-        "Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience.",
-      logo: "/assets/google.svg",
+        "At WyzLab Solutions, I am currently working as a Web Developer Intern, where I currently lead the development of an MVP for an eLearning SaaS platform with a scalable, multi-tenant architecture. Built core features such as content creation, gamified learning, and subscription management, with integrated monetization and third-party services for future growth.",
+      logo: "/assets/1.png",
     },
     {
       id: 2,
-      company: "Youtube",
-      role: "Software Engineer",
-      period: "Jan 2017 - Oct 2019",
+      company: "Kippap Learning Corp.",
+      role: "Software Developer Intern",
+      period: "Feb 2025 - Apr 2025",
       description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
-      logo: "/assets/youtube.svg",
+        "At Kippap Learning Corp., I served as a Software Developer Intern, where I collaborated with their mobile team to build and maintain apps using Flutter and Dart. Followed Agile practices and contributed to sprint activities. Designed and developed a React Native Expo prototype to showcase core features for business and investor presentations.",
+      logo: "/assets/2.svg",
     },
   ]);
 

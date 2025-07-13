@@ -20,7 +20,7 @@ export default function Navbar() {
     const section = document.getElementById(id);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - 110,
+        top: section.offsetTop - 130,
         behavior: "smooth",
       });
     }
@@ -40,8 +40,8 @@ export default function Navbar() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => scrollToSection("home")}
-          className="h-9 cursor-pointer"
-          src="/assets/logo.svg"
+          className="h-20 cursor-pointer"
+          src="/assets/lei.svg"
           alt="Logo"
         />
 
@@ -64,7 +64,9 @@ export default function Navbar() {
         </ul>
 
         <motion.a
-          href=""
+          href="https://drive.google.com/file/d/1d0GLK7KDHZkbA1MD4eE57eatSK-BPu36/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden relative lg:inline-block px-4 py-2 font-medium group"
         >
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>

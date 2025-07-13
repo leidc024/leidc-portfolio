@@ -5,6 +5,12 @@ import { BiLogoGmail } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { TypeAnimation } from "react-type-animation";
 
+const socialLinks = [
+  { Icon: BiLogoGmail, href: "mailto:your.email@example.com" },
+  { Icon: IoLogoLinkedin, href: "https://www.linkedin.com/in/leian-carl-dela-cruz-915b2324b/" },
+  { Icon: BsGithub, href: "https://github.com/leidc024" },
+];
+
 export default function Home() {
   return (
     <div className="mt-20" id="home">
@@ -33,7 +39,7 @@ export default function Home() {
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
               Hello, <TypeAnimation
                 sequence={[
-                  'I am Sathish Kumar',
+                  'I am Leian Carl',
                   1000,
                   // 'I am a Web Developer',
                   // 1000,
@@ -46,7 +52,7 @@ export default function Home() {
               />
             </motion.h2>
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              <span className="font-extrabold">Fullstack</span>{" "}
+              <span className="font-extrabold">React</span>{" "}
               <span
                 className="text-white font-extrabold"
                 style={{ WebkitTextStroke: "1px black" }}
@@ -55,17 +61,17 @@ export default function Home() {
               </span>
             </motion.h2>
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              Based In <span className="font-extrabold">India.</span>
+              Based In <span className="font-extrabold">Pasig</span>
             </motion.h2>
           </motion.div>
 
           <motion.p
-            className="text-[#71717A] text-sm lg:text-base mt-5"
+            className="text-[#71717A] text-justify text-sm lg:text-base mt-5"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Passionate about technology, I specialize in Web Development and Web Designing. I’m focused on building innovative solutions and continuously expanding my skills. My goal is to grow as a developer and contribute to impactful projects in the tech industry.
+            Passionate about technology, I specialize in building web and mobile applications using React.js and React Native. I focus on crafting modern, user-centered interfaces and scalable solutions. I'm committed to continuously improving my skills and contributing to impactful projects in the tech industry.
           </motion.p>
 
           <motion.div
@@ -74,10 +80,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            {[BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub].map((Icon, index) => (
+            {socialLinks.map(({ Icon, href }, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white p-2 lg:p-3 rounded border-2 border-black"
                 whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
                 whileTap={{ scale: 0.9 }}
