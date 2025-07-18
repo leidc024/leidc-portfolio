@@ -1,5 +1,6 @@
 import React from 'react';
 import { TbExternalLink } from "react-icons/tb";
+import { FaFigma } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import { ChevronDown } from "lucide-react";
 import Button from "./Button";
@@ -11,7 +12,7 @@ const projects = [
     description: "Startup fashion prototype app designed to help users create personalized avatars, manage wardrobes, and virtually try on outfits with features like 2D outfit pairing.",
     image: "/assets/icon.png",
     link: "https://drive.google.com/file/d/1fgsQJV47U0NsFw36Od5ypGxjqmY8r0iy/view?usp=sharing",
-    figmaLink: "https://www.figma.com/design/PwiDCNzUiFKckFsUSsgarG/ClothesMinded?node-id=0-1&t=NO3PS1tB5TyUKc8L-1" // Add Figma link
+    figmaLink: "https://www.figma.com/design/PwiDCNzUiFKckFsUSsgarG/ClothesMinded?node-id=0-1&t=NO3PS1tB5TyUKc8L-1"
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const projects = [
     description: "A dream journal mobile app where NLP meets the subconscious. Using stable diffusion model, the app processes user entries and generates visual interpretations of their dreams.",
     image: "/assets/dream.png",
     link: "https://drive.google.com/file/d/1LrUhYB0WXG819mBcOgoLCFEc46B3iSXA/view?usp=drive_link",
-    figmaLink: "https://www.figma.com/design/gHWMJLVrQPyzQJKHiWf1ac/-CMSC-176NLP--Dreamify?node-id=31-63&t=9rCi2atIaRDvstvb-1" // Add Figma link
+    figmaLink: "https://www.figma.com/design/gHWMJLVrQPyzQJKHiWf1ac/-CMSC-176NLP--Dreamify?node-id=31-63&t=9rCi2atIaRDvstvb-1"
   },
   {
     id: 3,
@@ -27,7 +28,7 @@ const projects = [
     description: "A CRUD project developed for our CMSC 127 (Database Systems) course at the University of the Philippines Cebu. The system supports core functionalities such as room assignments, occupancy tracking, and resident information management.",
     image: "/assets/expo.jpg",
     link: "https://upc-dorm.vercel.app/",
-    figmaLink: "https://figma.com/your-figma-link-3" // Add Figma link
+    figmaLink: "https://figma.com/your-figma-link-3"
   }
 ];
 
@@ -42,21 +43,19 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`flex justify-between items-center flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+            className={`flex justify-between items-center flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} group`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 80, damping: 10, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            {/* Clickable image (opens Figma) */}
+            {/* Image */}
             <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
-              <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
-                <img
-                  className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
-                  src={project.image}
-                  alt={project.title}
-                />
-              </a>
+              <img
+                className="w-full h-full hover:scale-105 transition-all duration-500 object-cover"
+                src={project.image}
+                alt={project.title}
+              />
             </div>
 
             <div className="lg:w-1/2 lg:space-y-6 space-y-4">
@@ -65,14 +64,19 @@ export default function Projects() {
               </h2>
               <p className="font-bold text-white text-xl lg:text-3xl">{project.title}</p>
 
-              <p className="font-light text-sm/6 lg:text-base text-[#71717A]">
+              <p className="font-light text-sm/6 lg:text-base text-[#71717A] group-hover:text-white transition-colors duration-300">
                 {project.description}
               </p>
               
-              {/* Arrow button (opens project link) */}
-              <a href={project.link} className="text-white mt-3 block" target="_blank" rel="noopener noreferrer">
-                <TbExternalLink size={23} />
-              </a>
+              {/* Link icons container */}
+              <div className="flex items-center space-x-4 mt-3">
+                <a href={project.link} className="text-white hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
+                  <TbExternalLink size={30} />
+                </a>
+                <a href={project.figmaLink} className="text-white hover:text-purple-500 transition-colors" target="_blank" rel="noopener noreferrer">
+                  <FaFigma size={30} />
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
