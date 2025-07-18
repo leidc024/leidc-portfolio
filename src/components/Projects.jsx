@@ -10,7 +10,7 @@ const projects = [
     title: "ClothesMinded",
     description: "Startup fashion prototype app designed to help users create personalized avatars, manage wardrobes, and virtually try on outfits with features like 2D outfit pairing.",
     image: "/assets/icon.png",
-    link: "https://drive.google.com/drive/u/0/folders/1wjZVxhXN_xp-v7wxbzMG7TpvQ_GLk_Hj",
+    link: "https://drive.google.com/file/d/1fgsQJV47U0NsFw36Od5ypGxjqmY8r0iy/view?usp=sharing",
     figmaLink: "https://www.figma.com/design/PwiDCNzUiFKckFsUSsgarG/ClothesMinded?node-id=0-1&t=NO3PS1tB5TyUKc8L-1" // Add Figma link
   },
   {
