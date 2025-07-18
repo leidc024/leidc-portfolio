@@ -10,6 +10,12 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
+  const socialLinks = [
+  { Icon: BiLogoGmail, href: "mailto:your.email@example.com" },
+  { Icon: IoLogoLinkedin, href: "https://www.linkedin.com/in/leian-carl-dela-cruz-915b2324b/" },
+  { Icon: BsGithub, href: "https://github.com/leidc024" },
+];
+
   return (
     <motion.div
       ref={ref}
@@ -33,13 +39,30 @@ export default function Contact() {
           initial={{ x: -50, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className='lg:w-[40%]'
+          className='lg:w-[40%] w-full flex justify-center'
         >
-          <form className='w-full space-y-3 lg:space-y-5'>
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="text" placeholder='Your name' required />
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="email" placeholder='Email' required />
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="text" placeholder='Your website (If exists)' />
-            <textarea className='resize-none border-2 px-5 py-3 h-32 border-black placeholder:text-[#71717A]  rounded text-sm w-full' placeholder='How can I help?*'></textarea>
+          <form className='w-full max-w-md space-y-3 lg:space-y-5'>
+            <input
+              className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full'
+              type="text"
+              placeholder='Your name'
+              required
+            />
+            <input
+              className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full'
+              type="email"
+              placeholder='Email'
+              required
+            />
+            <input
+              className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full'
+              type="text"
+              placeholder='Your website (If exists)'
+            />
+            <textarea
+              className='resize-none border-2 px-5 py-3 h-32 border-black placeholder:text-[#71717A] rounded text-sm w-full'
+              placeholder='How can I help?*'
+            ></textarea>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -56,10 +79,12 @@ export default function Contact() {
               </motion.button>
 
               <div className='flex items-center gap-x-2 lg:gap-x-5'>
-                {[BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub].map((Icon, index) => (
+                {socialLinks.map(({ Icon, href }, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-white p-2 lg:p-3 rounded border-2 border-black"
                     whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
                     whileTap={{ scale: 0.9 }}
@@ -76,38 +101,9 @@ export default function Contact() {
           initial={{ x: 50, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className='lg:w-1/2'
+          className='lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0'
         >
-          <div className='font-extrabold text-2xl lg:text-5xl mt-5 lg:mt-0 space-y-1 lg:space-y-3'>
-            <h2>Let's <span className='text-white' style={{ WebkitTextStroke: '1px black' }}>talk</span> for</h2>
-            <h2>Something special</h2>
-          </div>
-
-          <p className='text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-6'>I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
-
-          <div className='font-semibold text-sm lg:text-xl flex flex-col mt-6 gap-2 lg:gap-4'>
-            <motion.a
-              whileHover={{ x: 5 }}
-              className='flex items-center gap-2 group'
-              href="mailto:Youremail@gmail.com"
-            >
-              <span className='border-2 transition-all border-transparent group-hover:border-black rounded-full p-1'>
-                <IoMdMail className="w-4 h-4 lg:w-5 lg:h-5" />
-              </span>
-              Youremail@gmail.com
-            </motion.a>
-
-            <motion.a
-              whileHover={{ x: 5 }}
-              className='flex items-center gap-2 group'
-              href="tele:1234567890"
-            >
-              <span className='border-2 transition-all border-transparent group-hover:border-black rounded-full p-[5px]'>
-                <FaPhone className="w-3 h-3 lg:w-4 lg:h-4" />
-              </span>
-              1234567890
-            </motion.a>
-          </div>
+          <img src="/assets/hello.svg" alt="Hello" className="w-full max-w-md" />
         </motion.div>
       </div>
     </motion.div>

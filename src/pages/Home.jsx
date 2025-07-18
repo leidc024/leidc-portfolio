@@ -37,9 +37,9 @@ export default function Home() {
             }}
           >
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              Hello, <TypeAnimation
+              Hi, <TypeAnimation
                 sequence={[
-                  'I am Leian Carl',
+                  'I am Lei',
                   1000,
                   // 'I am a Web Developer',
                   // 1000,
@@ -102,7 +102,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <img className="h-full w-full" src="/assets/hero-vector.svg" alt="Hero Vector" />
+          <img className="ml-40 h-[75%] w-[75%]" src="/assets/hi.svg" alt="Hero Vector" />
         </motion.div>
       </div>
     </div>

@@ -1,37 +1,41 @@
 import React from 'react';
 import { TbExternalLink } from "react-icons/tb";
 import { motion } from 'framer-motion';
+import { ChevronDown } from "lucide-react";
+import Button from "./Button";
 
 const projects = [
   {
     id: 1,
-    title: "Crypto Screener Application",
-    description: "A powerful tool for tracking and analyzing cryptocurrency trends in real-time.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "ClothesMinded",
+    description: "Startup fashion prototype app designed to help users create personalized avatars, manage wardrobes, and virtually try on outfits with features like 2D outfit pairing.",
+    image: "/assets/icon.png",
+    link: "https://drive.google.com/drive/u/0/folders/1wjZVxhXN_xp-v7wxbzMG7TpvQ_GLk_Hj",
+    figmaLink: "https://www.figma.com/design/PwiDCNzUiFKckFsUSsgarG/ClothesMinded?node-id=0-1&t=NO3PS1tB5TyUKc8L-1" // Add Figma link
   },
   {
     id: 2,
-    title: "Stock Market Dashboard",
-    description: "An interactive dashboard to monitor stock prices and market trends efficiently.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "Dreamify",
+    description: "A dream journal mobile app where NLP meets the subconscious. Using stable diffusion model, the app processes user entries and generates visual interpretations of their dreams.",
+    image: "/assets/dream.png",
+    link: "https://drive.google.com/file/d/1LrUhYB0WXG819mBcOgoLCFEc46B3iSXA/view?usp=drive_link",
+    figmaLink: "https://www.figma.com/design/gHWMJLVrQPyzQJKHiWf1ac/-CMSC-176NLP--Dreamify?node-id=31-63&t=9rCi2atIaRDvstvb-1" // Add Figma link
   },
-
   {
     id: 3,
-    title: "Weather App",
-    description: "A sleek and modern weather application providing real-time weather updates.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "Dormitory Management System",
+    description: "A CRUD project developed for our CMSC 127 (Database Systems) course at the University of the Philippines Cebu. The system supports core functionalities such as room assignments, occupancy tracking, and resident information management.",
+    image: "/assets/expo.jpg",
+    link: "https://upc-dorm.vercel.app/",
+    figmaLink: "https://figma.com/your-figma-link-3" // Add Figma link
   }
 ];
 
 export default function Projects() {
   return (
-    <div className="bg-black px-5 lg:px-28 py-8 my-8 lg:py-16 lg:my-16" id="projects">
+    <div className="bg-[#020817] px-5 lg:px-28 py-8 my-8 lg:py-16 lg:my-16" id="projects">
       <h2 className="text-2xl lg:text-4xl text-center text-white">
-        My <span className="font-extrabold">Projects</span>
+        Top 3 <span className="font-extrabold">Projects</span>
       </h2>
 
       <div className="lg:mt-16 mt-8 lg:space-y-16 space-y-8 lg:pb-6 pb-3">
@@ -44,12 +48,15 @@ export default function Projects() {
             transition={{ type: "spring", stiffness: 80, damping: 10, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
+            {/* Clickable image (opens Figma) */}
             <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
-              <img
-                className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
-                src={project.image}
-                alt={project.title}
-              />
+              <a href={project.figmaLink} target="_blank" rel="noopener noreferrer">
+                <img
+                  className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
+                  src={project.image}
+                  alt={project.title}
+                />
+              </a>
             </div>
 
             <div className="lg:w-1/2 lg:space-y-6 space-y-4">
@@ -61,12 +68,22 @@ export default function Projects() {
               <p className="font-light text-sm/6 lg:text-base text-[#71717A]">
                 {project.description}
               </p>
+              
+              {/* Arrow button (opens project link) */}
               <a href={project.link} className="text-white mt-3 block" target="_blank" rel="noopener noreferrer">
                 <TbExternalLink size={23} />
               </a>
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* "See More" button */}
+      <div className="flex justify-center mt-10">
+        <Button href="https://github.com/leidc024" variant="solid" size="lg" className="group">
+          See More
+          <ChevronDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+        </Button>
       </div>
     </div>
   );
