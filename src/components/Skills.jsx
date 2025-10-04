@@ -30,10 +30,10 @@ export default function Skills() {
     {
       id: 1,
       company: "WyzLab Solutions",
-      role: "Web Developer Intern",
-      period: "June 2025 - Present",
+      role: "Full-stack Developer Intern",
+      period: "June 2025 - Sept 2025",
       description:
-        "At WyzLab Solutions, I am currently working as a Web Developer Intern, where I currently lead the development of an MVP for an eLearning SaaS platform with a scalable, multi-tenant architecture. Built core features such as content creation, gamified learning, and subscription management, with integrated monetization and third-party services for future growth.",
+        "At WyzLab Solutions, I led the development of an MVP for an eLearning SaaS platform with a scalable, multi-tenant architecture. Built core features such as content creation, gamified learning, and subscription management, with integrated monetization and third-party services for future growth.",
       logo: "/assets/1.png",
     },
     {

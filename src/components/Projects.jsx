@@ -24,11 +24,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "Dormitory Management System",
-    description: "A CRUD project developed for our CMSC 127 (Database Systems) course at the University of the Philippines Cebu. The system supports core functionalities such as room assignments, occupancy tracking, and resident information management.",
-    image: "/assets/expo.jpg",
-    link: "https://upc-dorm.vercel.app/",
-    figmaLink: "https://figma.com/your-figma-link-3"
+    title: "UP Dormers Association ",
+    description: "A web app for the UP Dormers Association : Automating and digitizing the UPDA dormitory application process.",
+    image: "/assets/image.png",
+    link: "https://up-dormers-association.vercel.app/",
+    figmaLink: "https://www.figma.com/design/R9Xg6F4zOvFnjuchAvR9sM/CMSC-165---UP-Dormitory-Application-Point-System-Website"
   }
 ];
 
