@@ -46,14 +46,19 @@ export default function Navbar() {
         />
 
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
-          {["about", "skills", "projects", "contact"].map((section) => (
+          {[
+            { id: "about", label: "About" },
+            { id: "skills", label: "Skills" },
+            { id: "projects", label: "Projects" },
+            { id: "achievements", label: "Awards" }
+          ].map((section) => (
             <motion.li
-              key={section}
+              key={section.id}
               className="group"
               whileHover={{ scale: 1.1 }}
             >
-              <button onClick={() => scrollToSection(section)}>
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+              <button onClick={() => scrollToSection(section.id)}>
+                {section.label}
               </button>
               <motion.span
                 className="w-0 transition-all duration-300 group-hover:w-full h-[2px] bg-black flex"
@@ -64,7 +69,7 @@ export default function Navbar() {
         </ul>
 
         <motion.a
-          href="https://drive.google.com/file/d/1q3utdiGfbMWD_i9XGZXJ6N8qdB3eve8t/view?usp=sharing"
+          href="https://drive.google.com/file/d/1X09Soz-69cPF9EOZZtWEdXE5y3d0K6AH/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden relative lg:inline-block px-4 py-2 font-medium group"
@@ -102,14 +107,19 @@ export default function Navbar() {
               <HiX />
             </button>
             <ul className="flex flex-col items-start ml-16 mt-28 h-full gap-y-6 font-semibold">
-              {["about", "skills", "projects", "contact"].map((section) => (
+              {[
+                { id: "about", label: "About" },
+                { id: "skills", label: "Skills" },
+                { id: "projects", label: "Projects" },
+                { id: "achievements", label: "Awards" }
+              ].map((section) => (
                 <motion.li
-                  key={section}
+                  key={section.id}
                   className="border-b"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <button onClick={() => scrollToSection(section)}>
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  <button onClick={() => scrollToSection(section.id)}>
+                    {section.label}
                   </button>
                 </motion.li>
               ))}

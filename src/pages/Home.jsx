@@ -47,12 +47,12 @@ export default function Home() {
                   // 1000,
                 ]}
                 speed={10}
-                style={{ fontWeight:600 }}
+                style={{ fontWeight: 600 }}
                 repeat={Infinity}
               />
             </motion.h2>
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              <span className="font-extrabold">React</span>{" "}
+              <span className="font-extrabold">Aspiring</span>{" "}
               <span
                 className="text-white font-extrabold"
                 style={{ WebkitTextStroke: "1px black" }}
@@ -102,7 +102,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <img className="ml-40 h-[75%] w-[75%]" src="/assets/hi.svg" alt="Hero Vector" />
+          <img className="ml-40 h-[75%] w-[75%]" src="/assets/me.jpg" alt="Hero Vector" />
         </motion.div>
       </div>
     </div>
