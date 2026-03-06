@@ -15,8 +15,8 @@ interface EducationItem {
 
 export const portfolioData = {
   name: 'Leian Carl Dela Cruz',
-  title: 'Software Developer',
-  company: '_____',
+  title: 'Associate Consultant Developer',
+  company: 'Oracle',
   location: 'Pasig City, Philippines',
   email: 'leiandelacruz024@example.com',
   avatar: '/me.jpg', // Add your profile picture to public folder
