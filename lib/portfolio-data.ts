@@ -112,7 +112,7 @@ export const portfolioData = {
         name: 'Dreamify',
         description: 'an AI-powered dream journal app that converts text entries into visual interpretations, recognized as the best project in class.',
         technologies: ['React', 'React Native', 'TypeScript', 'Tailwind CSS', 'Gemini API'],
-        links: { live: 'https://drive.google.com/open?id=1LrUhYB0WXG819mBcOgoLCFEc46B3iSXA&usp=drive_copy', github: '' },
+        links: { live: 'https://drive.google.com/drive/folders/1HwFhBUuTuzAi3xZJGbo9DgOXchrVKWCO?usp=drive_link', github: '' },
       },
       {
         id: 4,
