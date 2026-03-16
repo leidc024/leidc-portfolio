@@ -18,13 +18,14 @@ export function Header({ name, title, company, location, avatar }: HeaderProps) 
 
   useEffect(() => {
     setMounted(true);
-    // Check for saved theme preference or system preference
+    // Default to dark mode unless user has explicitly saved a preference.
     const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldBeDark = saved ? saved === 'dark' : prefersDark;
+    const shouldBeDark = saved ? saved === 'dark' : true;
     setIsDark(shouldBeDark);
     if (shouldBeDark) {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
