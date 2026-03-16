@@ -84,6 +84,13 @@ export function Header({ name, title, company, location, avatar }: HeaderProps) 
               <Sun className="h-3 w-3 text-amber-500" />
             )}
           </span>
+
+          {isDark && (
+            <span
+              className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-amber-300 animate-pulse"
+              aria-hidden="true"
+            />
+          )}
         </button>
       </div>
     </header>
