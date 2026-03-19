@@ -1,6 +1,7 @@
 interface EducationItem {
   degree: string;
   school: string;
+  designation?: string;
   period: string;
 }
 
@@ -19,6 +20,7 @@ export function EducationSection({ title, items }: EducationSectionProps) {
             <div className="flex-1 min-w-0">
               <h3 className="text-sm font-medium text-foreground">{item.degree}</h3>
               <p className="text-sm text-accent">{item.school}</p>
+              {item.designation && <p className="text-sm text-muted-foreground">{item.designation}</p>}
             </div>
             <p className="text-sm text-muted-foreground whitespace-nowrap">{item.period}</p>
           </div>

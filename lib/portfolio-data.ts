@@ -10,12 +10,13 @@ interface ExperienceItem {
 interface EducationItem {
   degree: string;
   school: string;
+  designation?: string;
   period: string;
 }
 
 export const portfolioData = {
   name: 'Leian Carl Dela Cruz',
-  title: 'Associate Consultant Developer',
+  title: 'Incoming Consultant Developer',
   company: 'Oracle',
   location: 'Pasig City, Philippines',
   email: 'leiandelacruz024@example.com',
@@ -29,6 +30,12 @@ export const portfolioData = {
   experience: {
     title: 'Experience',
     items: [
+      // {
+      //   role: 'Associate Consultant Developer',
+      //   company: 'Oracle',
+      //   period: 'Incoming July 2026',
+      //   type: 'experience',
+      // },
       {
         role: 'Fullstack Developer Intern',
         company: 'WyzLab Solutions',
@@ -49,7 +56,8 @@ export const portfolioData = {
     items: [
       {
         degree: 'Bachelor of Science in Computer Science',
-        school: 'University of the Philippines Cebu (CHED Center of Excellence in IT)',
+        school: 'University of the Philippines Cebu',
+        designation: 'CHED Center of Excellence in IT',
         period: '2022 - 2026',
       },
       {
